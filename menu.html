@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script&family=Montserrat:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <link href='css/normalize.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/menu.css">
+    <title>Pizzeria</title>
+</head>
+
+<body>
+    <div class="page">
+
+        <header class="header">
+
+            <div class="header__content">
+                <div class="header__block header__logo">
+                    <img src="img/logo.png" alt="Company logo">
+                    <span>Pizzanio</span>
+                </div>
+                <div class="logo__name">
+                    <span>Pizzanio</span>
+                </div>
+                <nav>
+                    <ul class="header__navList">
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="#">Меню</a></li>
+                        <li><a href="form.html">Замовлення</a></li>
+                        <li><a href="aboutUs.html">Про нас</a></li>
+                    </ul>
+                </nav>
+                <div class="header__block burgerMenu">
+                    <img src="img/sendvich-menu.png" alt="Menu">
+                </div>
+                <div class="header__block icons">
+                    <div class="icon__language">
+                        <img src="img/language.png" alt="Choose language">
+                        <div class="blockLanguages">
+                            <p>Українська</p>
+                            <hr>
+                            <p>English</p>
+                        </div>
+                    </div>
+                    <img src="img/full-pizza.png" alt="Icon pizza">
+                </div>
+            </div>
+
+        </header>
+
+        <index class="index">
+
+            <nav class="mobileMenu">
+                <ul>
+                    <li><a href="index.html">Головна</a></li>
+                    <hr>
+                    <li><a href="#">Меню</a></li>
+                    <hr>
+                    <li><a href="form.html">Замовлення</a></li>
+                    <hr>
+                    <li><a href="aboutUs.html">Про нас</a></li>
+                    <hr>
+                </ul>
+            </nav>
+
+
+            <section class="hero">
+                <h1 class="hero__title">Меню</h1>
+                <div class="hero__cards"></div>
+                <div class="card__buttons">
+                    <div>
+                        <button class="card__button card__button-left"
+                            style="background-image: url('img/arrow-left.png')"></button>
+                        <button class="card__button card__button-right"
+                            style="background-image: url('img/arrow-right.png')"></button>
+                    </div>
+                    <span></span>
+                </div>
+            </section>
+
+        </index>
+
+        <footer class="footer">
+
+            <div class="footer__content">
+                <div class="footer__logo">
+                    <img src="img/logo.png" alt="Company logo">
+                    <p>Pizzanio</p>
+                </div>
+                <div class="footer__list">
+                    <nav>
+                        <ul class="footer__nav">
+                            <li><a href="index.html">Головна</a></li>
+                            <li><a href="#">Меню</a></li>
+                            <li><a href="form.html">Замовлення</a></li>
+                            <li><a href="aboutUs.html">Про нас</a></li>
+                        </ul>
+                    </nav>
+                    <div class="footer__contacts">
+                        <a href="tel:+380991111111">+38099-111-11-11</a>
+                        <a href="tel:+380991111111">+38099-111-11-11</a>
+                        <a href="mailto:example@gmail.com">example@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+    <script src="menu.js"></script>
+    <script src="mobileMenu.js"></script>
+
+</body>
+
+</html>

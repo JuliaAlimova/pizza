@@ -1,0 +1,132 @@
+@use "lib/service.scss" as s;
+@use "component/header.scss";
+@use "component/footer.scss";
+
+.page {
+  margin: 0 auto;
+  background-color: s.color("background");
+}
+
+// =========================================
+
+.index {
+  @extend .section;
+}
+
+.mobileMenu {
+  display: none;
+
+  & > ul {
+    display: grid;
+    gap: s.space(10);
+    font-size: 18px;
+    justify-content: flex-start;
+
+    & > hr {
+      border: 1px solid s.color(redLight);
+      width: 182px;
+    }
+    & a {
+      @include s.linkHover;
+    }
+  }
+}
+
+.hero {
+  @extend .section__content;
+
+  display: grid;
+  gap: s.space(25);
+
+  @media all and (width < s.screen("mobile")) {
+    gap: s.space(15);
+  }
+}
+
+.hero__title {
+  @include s.title;
+}
+
+.hero__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: s.space(15);
+
+  @media all and (width < s.screen("laptop")) {
+    grid-template-columns: repeat(2, 1fr);
+    & > div:last-child {
+      grid-column: 1/3;
+    }
+  }
+
+  @media all and (width < s.screen("tablet")) {
+    grid-template-columns: 1fr;
+    gap: s.space(10);
+
+    & > div:last-child {
+      grid-column: 1;
+    }
+  }
+
+  & > div {
+    display: grid;
+    gap: s.space(10);
+    justify-items: center;
+    text-align: center;
+    padding: s.space(15) s.space(10) s.space(25) s.space(10);
+    background: s.color("radialBackground");
+    border: 2px solid s.color("redLight");
+    border-radius: s.space(14);
+
+    & > img {
+      width: 270px;
+      height: 272px;
+
+      @media all and (width < s.screen("tablet")) {
+        width: 234px;
+        height: 236px;
+      }
+    }
+
+    & > h2 {
+      font-weight: 600;
+    }
+
+    & > span {
+      @include s.title;
+      text-transform: none;
+    }
+
+    & > button {
+      @include s.button;
+    }
+
+    @media all and (width < s.screen("tablet")) {
+      padding: s.space(15) s.space(10);
+    }
+  }
+}
+
+.card__buttons {
+  display: grid;
+  gap: s.space(10);
+  justify-content: center;
+  justify-items: center;
+
+  & > div {
+    display: flex;
+    gap: s.space(10);
+  }
+}
+
+.card__button {
+  @include s.cardButton;
+}
+
+.card__button-left {
+  border-radius: s.space(50) 0px 0px s.space(50);
+}
+
+.card__button-right {
+  border-radius: 0px s.space(50) s.space(50) 0px;
+}

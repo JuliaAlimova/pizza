@@ -1,0 +1,42 @@
+$colorMap: (
+  background: #1d1b2b,
+  radialBackground:
+    radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(236, 77, 47, 0) 0%,
+      rgba(236, 77, 47, 0.17) 100%
+    ),
+  colorWhite: #ffffff,
+  redLight: #ec4d2f,
+  redDark: #b83922,
+);
+
+@function color($key) {
+  @return map-get($colorMap, $key);
+}
+
+$fontSizeMap: (
+  default: 16px,
+  medium: 18px,
+  large: 20px,
+  larger: 24px,
+);
+
+@function fontSize($key: "default") {
+  @return map-get($fontSizeMap, $key);
+}
+
+@function space($num) {
+  @return $num * 2px;
+}
+
+$screenMap: (
+  desktop: 1650px,
+  laptop: 1240px,
+  tablet: 850px,
+  mobile: 375px,
+);
+
+@function screen($key) {
+  @return map-get($screenMap, $key);
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script&family=Montserrat:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <link href='css/normalize.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/form.css">
+    <title>Pizzeria</title>
+</head>
+
+<body>
+    <div class="page">
+
+        <header class="header">
+
+            <div class="header__content">
+                <div class="header__block header__logo">
+                    <img src="img/logo.png" alt="Company logo">
+                    <span>Pizzanio</span>
+                </div>
+                <div class="logo__name">
+                    <span>Pizzanio</span>
+                </div>
+                <nav>
+                    <ul class="header__navList">
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="menu.html">Меню</a></li>
+                        <li><a href="#">Замовлення</a></li>
+                        <li><a href="aboutUs.html">Про нас</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__block burgerMenu">
+                    <img src="img/sendvich-menu.png" alt="Menu">
+                </div>
+                <div class="header__block icons">
+                    <div class="icon__language">
+                        <img src="img/language.png" alt="Choose language">
+                        <div class="blockLanguages">
+                            <p>Українська</p>
+                            <hr>
+                            <p>English</p>
+                        </div>
+                    </div>
+                    <img src="img/full-pizza.png" alt="Icon pizza">
+                </div>
+            </div>
+
+        </header>
+
+        <index class="index">
+
+            <nav class="mobileMenu">
+                <ul>
+                    <li><a href="index.html">Головна</a></li>
+                    <hr>
+                    <li><a href="menu.html">Меню</a></li>
+                    <hr>
+                    <li><a href="#">Замовлення</a></li>
+                    <hr>
+                    <li><a href="aboutUs.html">Про нас</a></li>
+                    <hr>
+                </ul>
+            </nav>
+
+            <section class="hero">
+                <div class="orderInfo">
+                    <div>
+                        <h1>Ваше Замовлення</h1>
+                        <div>
+                            <div>
+                                <h2>Lorem ipsum:</h2>
+                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                            </div>
+
+                            <div>
+                                <h2>Lorem ipsum:</h2>
+                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                            </div>
+
+                            <div>
+                                <h2>Lorem ipsum:</h2>
+                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                            </div>
+
+                            <div>
+                                <h2>Lorem ipsum:</h2>
+                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.</p>
+                </div>
+                <div class="orderForm">
+                    <form action="#">
+                        <fieldset>
+                            <legend>Lorem ipsum</legend>
+                        </fieldset>
+                        <div>
+                            <div class="formGroup">
+                                <input type="text" placeholder="Введіть ім'я" name="name" data-val="true"
+                                    data-required="Введіть ім'я" data-error-label="nameErrorLabel">
+                                <span class="errorLabel" id="nameErrorLabel">Введіть ім'я</span>
+                            </div>
+
+                            <div class="formGroup">
+                                <input type="text" placeholder="Введіть назву міста" name="city" data-val="true"
+                                    data-required="Введіть назву міста" data-error-label="cityErrorLabel">
+                                <span class="errorLabel" id="cityErrorLabel">Введіть назву міста</span>
+                            </div>
+
+                            <div class="formGroup">
+                                <input type="email" placeholder="Введіть Email" name="email" data-val="true"
+                                    data-required="Введіть Email у форматі email@example.com"
+                                    data-pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" data-error-label="emailErrorLabel">
+                                <span class="errorLabel" id="emailErrorLabel">Введіть Email у форматі
+                                    email@example.com</span>
+                            </div>
+
+                            <div class="formGroup">
+                                <input type="tel" placeholder="Введіть номер телефона" name="phoneNumber"
+                                    data-val="true" data-required="Укажіть номер телефона у форматі +380 (99) 999-99-99"
+                                    data-phone-number data-pattern="[\+]\d{3}\s[\(]\d{2}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}"
+                                    data-error-label="phoneNumberErrorLabel">
+                                <span class="errorLabel" id="phoneNumberErrorLabel">Укажіть номер телефона у форматі
+                                    +380
+                                    (99) 999-99-99</span>
+                            </div>
+                        </div>
+                        <button type="submit">Lorem ipsum</button>
+
+                    </form>
+                </div>
+            </section>
+
+        </index>
+
+        <footer class="footer">
+
+            <div class="footer__content">
+                <div class="footer__logo">
+                    <img src="img/logo.png" alt="Company logo">
+                    <p>Pizzanio</p>
+                </div>
+                <div class="footer__list">
+                    <nav>
+                        <ul class="footer__nav">
+                            <li><a href="index.html">Головна</a></li>
+                            <li><a href="menu.html">Меню</a></li>
+                            <li><a href="#">Замовлення</a></li>
+                            <li><a href="aboutUs.html">Про нас</a></li>
+                        </ul>
+                    </nav>
+                    <div class="footer__contacts">
+                        <a href="tel:+380991111111">+38099-111-11-11</a>
+                        <a href="tel:+380991111111">+38099-111-11-11</a>
+                        <a href="mailto:example@gmail.com">example@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+    <script src="form.js"></script>
+    <script src="mobileMenu.js"></script>
+
+</body>
+
+</html>

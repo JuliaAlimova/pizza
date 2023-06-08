@@ -1,0 +1,190 @@
+@use "app/sass/lib/service.scss" as s;
+
+.header {
+  @extend .section;
+  background-color: s.color("redLight");
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+.header__content {
+  @extend .section__content;
+  max-width: inherit;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: s.space(6) 0;
+  gap: s.space(40);
+
+  @media all and (width < s.screen("laptop")) {
+    gap: 0px;
+  }
+
+  & > nav {
+    flex-basis: 40%;
+
+    @media all and (width < s.screen("mobile")) {
+      display: none;
+    }
+  }
+}
+
+.header__block {
+  background-color: s.color("redDark");
+  padding: s.space(7);
+  display: flex;
+
+  flex-basis: 30%;
+  flex-shrink: 0.5;
+}
+
+.header__logo {
+  border-radius: 0px s.space(50) s.space(50) 0px;
+  align-items: center;
+  gap: s.space(5);
+  padding-right: s.space(15);
+  justify-content: flex-end;
+
+  & > img {
+    width: 40px;
+    height: 40px;
+  }
+
+  @media all and (width < s.screen("tablet")) {
+    padding-right: s.space(5);
+  }
+
+  & > span {
+    font-family: "Anton";
+    font-size: s.fontSize("larger");
+    line-height: 36px;
+    letter-spacing: 0.05em;
+
+    @media all and (width < s.screen("tablet")) {
+      display: none;
+    }
+  }
+}
+
+.logo__name {
+  font-family: "Anton";
+  font-size: s.fontSize("larger");
+  line-height: 36px;
+  letter-spacing: 0.05em;
+  display: none;
+
+  @media all and (width < s.screen("mobile")) {
+    display: block;
+  }
+}
+
+.header__navList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media all and (width < s.screen("tablet")) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    row-gap: s.space(5);
+  }
+
+  & a {
+    @include s.linkHover;
+  }
+}
+
+.burgerMenu {
+  display: none;
+  border-radius: s.space(50) 0px 0px s.space(50);
+  padding-left: s.space(10);
+  padding-right: s.space(5);
+  transition: 0.5s;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  & > img {
+    width: 40px;
+    height: 40px;
+  }
+
+  @media all and (width < s.screen("mobile")) {
+    display: block;
+  }
+}
+
+.icons {
+  border-radius: s.space(50) 0px 0px s.space(50);
+  justify-content: flex-start;
+
+  padding-left: s.space(15);
+  gap: s.space(30);
+  position: relative;
+
+  @media all and (width < s.screen("laptop")) {
+    gap: s.space(12);
+  }
+
+  @media all and (width < s.screen("tablet")) {
+    padding-left: s.space(5);
+
+    @media all and (width < s.screen("mobile")) {
+      padding-right: s.space(10);
+      display: none;
+    }
+
+    & > img {
+      display: none;
+    }
+  }
+}
+
+.icon__language:hover {
+  cursor: pointer;
+
+  .blockLanguages {
+    visibility: visible;
+    z-index: 2;
+  }
+}
+
+.blockLanguages {
+  transition: 0.5s;
+  visibility: hidden;
+
+  position: absolute;
+  right: 80%;
+  top: 140%;
+  max-width: 219px;
+  width: 100%;
+  height: 142px;
+  display: grid;
+  justify-items: end;
+  padding: s.space(15);
+  background: s.color("radialBackground");
+  border: 2px solid s.color("redLight");
+  border-radius: s.space(14);
+  z-index: 2;
+
+  @media all and (width < s.screen("tablet")) {
+    width: auto;
+    height: auto;
+    padding: s.space(7);
+  }
+
+  & hr {
+    border: 1px solid s.color("redLight");
+    max-width: 159px;
+    width: 100%;
+  }
+
+  & p:hover {
+    color: s.color("redLight");
+  }
+}

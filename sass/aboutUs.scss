@@ -1,0 +1,127 @@
+@use "lib/service.scss" as s;
+@use "component/header.scss";
+@use "component/footer.scss";
+
+.page {
+  margin: 0 auto;
+  background-color: s.color("background");
+}
+
+// =========================================
+
+.index {
+  @extend .section;
+}
+
+.mobileMenu {
+  display: none;
+
+  & > ul {
+    display: grid;
+    gap: s.space(10);
+    font-size: 18px;
+    justify-content: flex-start;
+
+    & > hr {
+      border: 1px solid s.color(redLight);
+      width: 182px;
+    }
+    & a {
+      @include s.linkHover;
+    }
+  }
+}
+
+.hero {
+  @extend .section__content;
+  display: grid;
+  gap: s.space(25);
+
+  & > h1 {
+    @include s.title;
+  }
+
+  & > iframe {
+    max-width: 1170px;
+    height: 658px;
+    width: 100%;
+
+    @media all and (width < s.screen("laptop")) {
+      max-width: 1100px;
+      height: 450px;
+    }
+
+    @media all and (width < s.screen("tablet")) {
+      max-width: 700px;
+      height: 300px;
+    }
+
+    @media all and (width < s.screen("mobile")) {
+      max-width: 335px;
+      height: 180px;
+    }
+  }
+}
+
+.aboutUs__description {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: start;
+  gap: s.space(15);
+
+  @media all and (width < s.screen("tablet")) {
+    grid-template-columns: 1fr;
+  }
+
+  & > div:first-of-type {
+    flex-basis: 570px;
+    display: grid;
+    justify-items: start;
+    gap: s.space(15);
+
+    & > div {
+      display: grid;
+      gap: s.space(10);
+
+      & > h2 {
+        font-weight: 600;
+      }
+    }
+
+    & > p {
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  & > div:last-of-type {
+    flex-basis: 370px;
+    display: grid;
+    gap: s.space(10);
+    height: max-content;
+
+    & > h2 {
+      font-weight: 600;
+    }
+
+    & > ul {
+      display: grid;
+      gap: s.space(10);
+
+      > li::before {
+        content: "";
+        display: inline-block;
+        background: s.color("radialBackground");
+        width: 8px;
+        height: 8px;
+        border: 1px solid s.color("redLight");
+        border-radius: 50%;
+        margin-right: s.space(7);
+      }
+    }
+  }
+
+  & > button {
+    @include s.button;
+  }
+}

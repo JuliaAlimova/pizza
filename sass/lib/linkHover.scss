@@ -1,0 +1,14 @@
+@use "var.scss";
+
+@mixin linkHover($bgcolor: "redDark") {
+  transition: 0.5s;
+  color: var.color("colorWhite");
+  padding: 5px var.space(5);
+  text-wrap: nowrap;
+
+  &:hover {
+    cursor: pointer;
+    border-radius: var.space(25);
+    background-color: var.color($bgcolor);
+  }
+}

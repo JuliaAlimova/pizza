@@ -1,0 +1,257 @@
+@use "lib/service.scss" as s;
+@use "component/header.scss";
+@use "component/footer.scss";
+
+.page {
+  margin: 0 auto;
+  background-color: s.color("background");
+}
+
+// =========================================
+
+.index {
+  @extend .section;
+  padding: s.space(65) 171px s.space(50) 375px;
+  gap: s.space(24);
+  align-items: center;
+
+  @media all and (width < s.screen("desktop")) {
+    padding: s.space(65) s.space(50);
+    gap: s.space(30);
+  }
+
+  @media all and (width < s.screen("laptop")) {
+    padding: s.space(65) s.space(25);
+    gap: s.space(20);
+  }
+
+  @media all and (width < s.screen("tablet")) {
+    display: grid;
+    gap: s.space(13);
+    justify-items: center;
+  }
+}
+
+.mobileMenu {
+  display: none;
+
+  & > ul {
+    display: grid;
+    gap: s.space(10);
+    font-size: 18px;
+    justify-content: flex-start;
+
+    & > hr {
+      border: 1px solid s.color(redLight);
+      width: 182px;
+    }
+    & a {
+      @include s.linkHover;
+    }
+  }
+}
+
+.hero {
+  @extend .section__content;
+  display: grid;
+  gap: s.space(30);
+}
+
+.hero__title {
+  position: relative;
+
+  font-family: "Anton";
+  font-size: 184px;
+  line-height: 277px;
+  letter-spacing: 0.05em;
+
+  @media all and (width < s.screen("laptop")) {
+    font-size: 140px;
+    line-height: 200px;
+  }
+
+  @media all and (width < s.screen("mobile")) {
+    font-size: 110px;
+    line-height: 166px;
+  }
+
+  & > span {
+    font-family: "Dancing Script", cursive;
+    font-size: 84px;
+    letter-spacing: 0.05em;
+    color: s.color("redDark");
+    position: absolute;
+    bottom: -45%;
+    left: 40%;
+
+    @media all and (width < s.screen("laptop")) {
+      font-size: 60px;
+    }
+
+    @media all and (width < s.screen("tablet")) {
+      font-size: 50px;
+      left: 30%;
+    }
+
+    @media all and (width < s.screen("mobile")) {
+      font-size: 50px;
+    }
+  }
+}
+
+.hero__content {
+  display: grid;
+  gap: s.space(20);
+  justify-items: start;
+  align-items: center;
+
+  & > h2 {
+    @include s.title;
+  }
+
+  & > ul {
+    display: grid;
+    gap: s.space(10);
+
+    > li::before {
+      content: "";
+      display: inline-block;
+      background: s.color("radialBackground");
+      width: 8px;
+      height: 8px;
+      border: 1px solid s.color("redLight");
+      border-radius: 50%;
+      margin-right: s.space(7);
+    }
+  }
+
+  & > a {
+    @include s.button;
+  }
+}
+
+.index__card {
+  @extend .section__content;
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  text-align: center;
+  gap: s.space(15);
+
+  & > div {
+    position: relative;
+  }
+}
+
+.card__img {
+  max-width: 582px;
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  padding: s.space(17);
+  background: s.color("radialBackground"), s.color("background");
+  border: 2px solid s.color("redLight");
+  border-radius: 50%;
+  z-index: 1;
+
+  & > img {
+    width: 512px;
+    height: 512px;
+  }
+
+  @media all and (width < s.screen("laptop")) {
+    width: 450px;
+    height: 450px;
+    padding: s.space(10);
+
+    & > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media all and (width < s.screen("tablet")) {
+    width: 276px;
+    height: 276px;
+
+    & > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.card__discount {
+  position: absolute;
+  left: -8%;
+  top: 0;
+  width: 160px;
+  height: 160px;
+  background: s.color("background");
+  border: 2px solid s.color("redDark");
+  border-radius: 50%;
+
+  font-family: "Dancing Script", cursive;
+  font-size: 48px;
+  line-height: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.05em;
+  color: s.color("redDark");
+  z-index: 0;
+
+  @media all and (width < s.screen("laptop")) {
+    width: 100px;
+    height: 100px;
+    font-size: 35px;
+    left: -3%;
+  }
+
+  @media all and (width < s.screen("tablet")) {
+    left: -9%;
+    top: 0;
+
+    width: 70px;
+    height: 70px;
+
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+.card__description {
+  display: grid;
+  gap: s.space(8);
+
+  & > h2 {
+    @include s.title;
+    text-transform: none;
+  }
+
+  & > p {
+    @include s.title;
+    text-transform: none;
+
+    color: s.color("redLight");
+  }
+}
+
+.card__buttons {
+  display: flex;
+  gap: s.space(10);
+}
+
+.card__button {
+  @include s.cardButton;
+}
+
+.card__button-left {
+  border-radius: s.space(50) 0px 0px s.space(50);
+}
+
+.card__button-right {
+  border-radius: 0px s.space(50) s.space(50) 0px;
+}

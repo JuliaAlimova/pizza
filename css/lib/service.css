@@ -1,0 +1,1 @@
+.section{display:flex;justify-content:center;padding:130px 50px}@media all and (width < 375px){.section{padding:130px 20px}}.section__content{max-width:1170px;width:100%;color:#fff;font-size:16px;font-family:"Montserrat",sans-serif;line-height:21px}

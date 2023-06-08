@@ -1,0 +1,9 @@
+@use "var.scss";
+
+@mixin title {
+  font-weight: 600;
+  font-size: var.fontSize("large");
+  color: var.color("colorWhite");
+  line-height: 26px;
+  text-transform: uppercase;
+}

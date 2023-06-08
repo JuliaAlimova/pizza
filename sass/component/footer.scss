@@ -1,0 +1,77 @@
+@use "app/sass/lib/service.scss" as s;
+
+.footer {
+  @extend .section;
+  background-color: s.color("redDark");
+}
+
+.footer__content {
+  @extend .section__content;
+
+  display: flex;
+  justify-content: space-between;
+  gap: s.space(40);
+
+  @media all and (width < s.screen("tablet")) {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    gap: s.space(15);
+  }
+}
+
+.footer__logo {
+  display: flex;
+  gap: s.space(5);
+  align-items: center;
+
+  & > p {
+    font-family: "Anton";
+    font-size: s.fontSize("large");
+    line-height: 36px;
+    letter-spacing: 0.05em;
+  }
+}
+
+.footer__list {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 50%;
+
+  @media all and (width < s.screen("tablet")) {
+    gap: s.space(15);
+  }
+
+  @media all and (width < s.screen("mobile")) {
+    display: grid;
+  }
+}
+
+.footer__nav {
+  display: grid;
+  gap: s.space(10);
+
+  @media all and (width < s.screen("mobile")) {
+    gap: s.space(5);
+  }
+
+  & a {
+    @include s.linkHover("redLight");
+    width: fit-content;
+  }
+}
+
+.footer__contacts {
+  display: grid;
+  align-items: center;
+  align-content: space-between;
+
+  @media all and (width < s.screen("mobile")) {
+    gap: s.space(5);
+  }
+
+  & > a {
+    @include s.linkHover("redLight");
+    width: fit-content;
+  }
+}

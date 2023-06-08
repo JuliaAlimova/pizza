@@ -1,0 +1,18 @@
+@use "var.scss";
+
+@mixin cardButton {
+  width: 87px;
+  height: 47px;
+  background-color: var.color("redDark");
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: var.color("redLight");
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}

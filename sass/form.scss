@@ -1,0 +1,145 @@
+@use "lib/service.scss" as s;
+@use "component/header.scss";
+@use "component/footer.scss";
+
+.page {
+  margin: 0 auto;
+  background-color: s.color("background");
+}
+
+// =========================================
+
+.index {
+  @extend .section;
+}
+
+.mobileMenu {
+  display: none;
+
+  & > ul {
+    display: grid;
+    gap: s.space(10);
+    font-size: 18px;
+    justify-content: flex-start;
+
+    & > hr {
+      border: 1px solid s.color(redLight);
+      width: 182px;
+    }
+    & a {
+      @include s.linkHover;
+    }
+  }
+}
+
+.hero {
+  @extend .section__content;
+  display: flex;
+  gap: s.space(15);
+  justify-content: space-between;
+
+  @media all and (width < s.screen("laptop")) {
+    align-items: center;
+  }
+
+  @media all and (width < s.screen("tablet")) {
+    display: grid;
+    gap: s.space(25);
+  }
+}
+
+.orderInfo {
+  width: 100%;
+  display: grid;
+  gap: s.space(51);
+
+  @media all and (width < s.screen("laptop")) {
+    gap: s.space(25);
+  }
+
+  @media all and (width < s.screen("tablet")) {
+    gap: s.space(15);
+  }
+
+  & > div {
+    display: grid;
+    gap: s.space(25);
+
+    & > h1 {
+      @include s.title;
+    }
+
+    & > div {
+      display: grid;
+      gap: s.space(15);
+
+      & > div {
+        display: grid;
+        gap: s.space(5);
+
+        & h2 {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.orderForm {
+  width: 100%;
+  padding: s.space(25) s.space(20);
+  display: grid;
+  background: s.color("radialBackground");
+  border: 2px solid s.color("redLight");
+  border-radius: s.space(14);
+
+  @media all and (width < s.screen("tablet")) {
+    padding: s.space(15) s.space(10);
+  }
+
+  & form {
+    display: grid;
+    gap: s.space(25);
+
+    & legend {
+      @include s.title;
+      text-align: center;
+    }
+
+    & > div {
+      display: grid;
+      gap: s.space(10);
+    }
+
+    .formGroup {
+      display: grid;
+
+      & > input {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 17px 24px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    .errorLabel {
+      font-weight: 500;
+      font-size: 12px;
+      opacity: 0.5;
+      visibility: hidden;
+    }
+
+    .error {
+      color: #ff2800;
+    }
+
+    .valid {
+      color: #24ff00;
+    }
+  }
+
+  & button {
+    @include s.button;
+    justify-self: center;
+  }
+}
